@@ -1,0 +1,17 @@
+#!/bin/sh
+
+# Test Runner for zero-copy-userspace-packet-filter
+#
+# This script runs a series of unit and integration tests to ensure the functionality of the zero-copy-userspace-packet-filter.
+
+# Include paths
+include_path="include/"
+src_path="src/"
+
+# Run unit tests
+make -C $include_path tests
+make -C $src_path tests
+
+# Run integration tests
+make -C $include_path integration-tests
+make -C $src_path integration-tests
